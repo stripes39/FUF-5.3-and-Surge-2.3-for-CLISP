@@ -1,0 +1,66 @@
+# CLISP
+*.fas
+*.lib
+
+# Python
+*.py[co]
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+develop-eggs
+.installed.cfg
+
+# Sphinx
+_build
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+
+# emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+
+# rope
+*.ropeproject
+
+# osx
+.DS_Store
+Icon?
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# VIM
+.*.sw[a-z]
+*.un~
+Session.vim
+
+# OpenOffice
+.~*
+
+# Eclipse
+.project
+.pydevproject
+.metadata
+
+/nlg/microplanner/realizerDbgOut.txt
