@@ -1,9 +1,18 @@
+(make-package :FUG5)
 (in-package "FUG5")
+
+(defun enable-csets ()
+  (define-procedural-type 'cset #'unify-cset
+      :syntax #'check-cset
+      :relocater #'relocate-pattern)
+)
 
 (defun compile-fug5 ()
   "Compile all files required by system fug5"
   (load "macros.l")
   (compile-file "vars.l")
+  (compile-file "graph.l")
+  (compile-file "psgraph.l")
   (compile-file "define.l")
   (compile-file "trace.l")
   (compile-file "generator.l")
@@ -21,7 +30,6 @@
   (compile-file "type.l")
   (compile-file "pattern.l")
   (compile-file "findcset.l")
-  (compile-file "graph.l")
   (compile-file "top.l")
   (compile-file "lexicon.l")
   (compile-file "linearize2.l")
@@ -30,7 +38,6 @@
   (compile-file "fdlist.l")
   (compile-file "continue.l")
   (compile-file "test.l")
-  (compile-file "psgraph.l")
   (load-fug5))
 
 (defun load-fug5 ()
@@ -62,7 +69,8 @@
   (load "fdlist")
   (load "continue")
   (load "checker")
-  (load "test"))
+  (load "test")
+  (enable-csets))
 
 (defun load-fug5-slow ()
   "Load all files of system in right order"
@@ -93,4 +101,5 @@
   (load "fdlist.l")
   (load "continue.l")
   (load "checker.l")
-  (load "test.l"))
+  (load "test.l")
+  (enable-csets))
