@@ -88,6 +88,12 @@
 ;; Therefore, (feature possessive) is a feature of the NP and not of the head noun.
 ;; The mark is added as punctuation at the end of the NP.
 
+(defun member2 (e l)
+  (cond ((null l) nil)
+   ((equal e (car l)) l)
+   (T (member2 e (cdr l))))
+)
+
 (defun possessor-apostrophe (sign)
  (or (equal sign "*apostrophe*")
      ;; the need to mark with * here is that
